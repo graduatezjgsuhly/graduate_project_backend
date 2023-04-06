@@ -41,9 +41,15 @@ def user_sign_up(request):
     else:
         return JsonResponse({"ret": 1})
 def user_login_in(request):
-    if request.method == 'GET':
+    print(111)
+    print(request.method)
+    print(request.body)
+    if request.method == 'POST':
+        print(111)
+        print(request)
+        print(111)
         request.params = json.loads(request.body)
-        
+
         print(request.params)
         id = request.params['id']
         passwd = request.params['passwd']
